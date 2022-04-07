@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Clientes></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Clientes</h1>
+    <p>Bem vindo ao controle de clientes.</p>
+    <form action="/clientes" method="post">
+      <tr>
+        <td colspan="4"><a href="/clientes/add"><button type="button">Novo</button></a></td>
+      </tr>
+      <tr>
+        <td colspan="4"><a href="/clientes"><button type="button">Listar</button></a></td>
+      </tr>
+    </form>
   </body>
 </html>

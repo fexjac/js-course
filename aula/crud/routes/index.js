@@ -1,14 +1,18 @@
 var express = require('express');
 var router = express.Router();
+//const db = require('../db.js');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  //res.render('index', { title: 'Express' });
-  res.render('list');
+router.get('/', async function(req, res, next) {
+  //const conn = await db.connect();
+  //const clientes = conn.collection("clientes");
+  //const docs = await clientes.find().toArray();
+  //console.log(docs);
+  res.render('index', {inserido: false });
 });
 
 router.get('/add', function(req, res, next) {
-  res.render('add');
+  res.render('clientes');
 });
 
 module.exports = router;

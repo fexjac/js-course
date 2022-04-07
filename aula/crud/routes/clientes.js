@@ -40,17 +40,9 @@ router.post('/', async function (req, res, next) {
 });
 
 router.get('/add', async function (req, res, next) {
-  res.render('add', { lbl: "Adicionar", obj: { nome: "", telefone: "", uf: "" } });
+  res.render('clientes', { lbl: "Adicionar", obj: { nome: "", telefone: "", uf: "" } });
 });
 
-router.get('/:id', async function (req, res, next) {
-  const conn = await db.connect();
-  const clientes = conn.collection("clientes");
-  const id = req.params.id
-  const docs = await clientes.findById(id);
-
-  //res.console.log(docs);
-});
 
 router.post('/delete', async function (req, res, next) {
   const conn = await db.connect();
@@ -74,7 +66,7 @@ router.post('/update', async function (req, res, next) {
 
   const ob = await clientes.findOne(filter);
   console.log(ob);
-  res.render('add', { obj: ob, lbl: "Atualizar" });
+  res.render('clientes', { obj: ob, lbl: "Atualizar" });
 });
 
 
